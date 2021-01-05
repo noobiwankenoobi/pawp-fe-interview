@@ -13,7 +13,7 @@ State does NOT need to be maintained between page refresh.
 
 Project is an already configured Gatsby project (you dont need to know this, just the boilerplate for serving the webpage)
 Start project by running `yarn develop` or `npm run develop` (dont worry about `build` and `serve`. `clean` will remove node modules and cache, but shouldnt be nessecary)
-Project will automatically be served at http://localhost:8000/
+Project will automatically be served at http://localhost:8000/ with automatic refresh on
 
 Choose your preferred technology.
 
@@ -26,3 +26,7 @@ Choose your preferred technology.
 React components should be added in App.tsx (or remove and create App.js for javascript)
 For css, make it usuable. Doesnt need to be pretty.
 Utlize basic ARIA accessible rules for buttons and images
+
+## Submit
+
+Delete `.cache`, `node_modules` and `public` directories, compress and return entire directory.
