@@ -16,9 +16,11 @@ export default function App({}: AppProps): JSX.Element {
   }, [images])
 
   return (
-    <div className="wrapper__main">
-      <Uploader setImages={setImages} />
-      <ImageArea images={images} />
+    <div className="app">
+      <div className="app__main">
+        <Uploader setImages={setImages} />
+        <ImageArea images={images} />
+      </div>
     </div>
   )
 }

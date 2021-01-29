@@ -21,7 +21,13 @@ const Uploader = ({ setImages }) => {
   // JSX
   const uploaderJSX = (
     <div className="uploader__main">
-      <input type="file" onChange={e => handleUpload(e)} />
+      <div className="uploader__input-wrap">
+        <span className="uploader__input-header">Upload an Image</span>
+        <label className="uploader__custom-input">
+          <input type="file" onChange={e => handleUpload(e)} />
+          Browse Files
+        </label>
+      </div>
     </div>
   )
 

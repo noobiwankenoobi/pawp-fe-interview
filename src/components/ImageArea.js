@@ -4,7 +4,7 @@ import Image from "./Image"
 
 const ImageArea = ({ images }) => {
   const renderImages = () => {
-    return images.map(image => <Image image={image} />)
+    return images.map(image => <Image image={image} key={image.data} />)
   }
 
   const imageArea = (
