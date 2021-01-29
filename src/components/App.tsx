@@ -1,24 +1,24 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 // CSS
 // import * as styles from "./styles"
 import "./styles.css"
 // Components
 import Uploader from "./Uploader.js"
-import ImageGrid from "./ImageGrid.js"
+import ImageArea from "./ImageArea.js"
 
 interface AppProps {}
 
 export default function App({}: AppProps): JSX.Element {
   const [images, setImages] = useState([])
 
-  const uploadImage = () => {
-    console.log("upload")
-  }
+  useEffect(() => {
+    console.log("images are ", images)
+  }, [images])
 
   return (
     <div className="wrapper__main">
-      <Uploader uploadImage={uploadImage} />
-      <ImageGrid images={images} />
+      <Uploader setImages={setImages} />
+      <ImageArea images={images} />
     </div>
   )
 }
