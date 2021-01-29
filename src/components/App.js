@@ -6,20 +6,24 @@ import "./styles.css"
 import Uploader from "./Uploader.js"
 import ImageArea from "./ImageArea.js"
 
-interface AppProps {}
-
-export default function App({}: AppProps): JSX.Element {
+export default function App() {
   const [images, setImages] = useState([])
 
+  // just to make sure it's working
   useEffect(() => {
     console.log("images are ", images)
   }, [images])
+
+  // Delete an image
+  const handleDelete = i => {
+    setImages(images.filter((image, index) => i !== index))
+  }
 
   return (
     <div className="app">
       <div className="app__main">
         <Uploader setImages={setImages} />
-        <ImageArea images={images} />
+        <ImageArea images={images} handleDelete={handleDelete} />
       </div>
     </div>
   )

@@ -2,19 +2,26 @@ import React from "react"
 // Components
 import Image from "./Image"
 
-const ImageArea = ({ images }) => {
+const ImageArea = ({ images, handleDelete }) => {
+  // Map the images
   const renderImages = () => {
-    return images.map(image => <Image image={image} key={image.data} />)
+    return images.map((image, index) => (
+      <Image
+        image={image}
+        key={image.data}
+        index={index}
+        handleDelete={handleDelete}
+      />
+    ))
   }
 
-  const imageArea = (
+  return (
     <div className="image-area__main">
       <div className="image-area__wrapper">
         <div className="image-area__grid">{images && renderImages()}</div>
       </div>
     </div>
   )
-  return imageArea
 }
 
 export default ImageArea

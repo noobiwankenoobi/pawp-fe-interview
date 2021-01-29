@@ -4,22 +4,31 @@ import useHover from "./useHover"
 // React feather
 import { Trash } from "react-feather"
 
-function Image({ image }) {
+function Image({ image, index, handleDelete }) {
   const [hoverRef, isHovered] = useHover()
 
+  const deleteBtn = (
+    <div
+      className="image__delete-btn"
+      onClick={() => handleDelete(index)}
+      role="button"
+    >
+      <Trash
+        fill="white"
+        stroke="white"
+        size="20"
+        className="image__trash-icon"
+      />
+    </div>
+  )
+
+  // Div that overlays on top of image card when hovering
   const hoverDiv = (
     <div
       className="image__hover-div"
       style={{ display: `${isHovered ? "flex" : "none"}` }}
     >
-      <div className="image__delete-btn">
-        <Trash
-          fill="white"
-          size="20"
-          stroke="#4a5568"
-          className="image__trash-icon"
-        />
-      </div>
+      {deleteBtn}
     </div>
   )
 

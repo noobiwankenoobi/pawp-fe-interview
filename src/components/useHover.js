@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect } from "react"
 
+// This is a custom hook using useRef that I use to know when a certain element is being hovered over
 function useHover() {
   const [value, setValue] = useState(false)
 
@@ -24,7 +25,7 @@ function useHover() {
     [ref.current] // Recall only if ref changes
   )
 
-  return [ref, value, setValue]
+  return [ref, value.setValue]
 }
 
 export default useHover
